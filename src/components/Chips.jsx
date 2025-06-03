@@ -10,7 +10,11 @@ export default function Chips() {
                     color: chip.color,
                     borderRadius: "2px",
                     padding: "5px"
-                }}>{chip.name}</span>
+                }}
+                    key={chip.name}
+                >
+                    {chip.name}
+                </span>
             ))}
         </div>
     );
