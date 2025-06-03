@@ -13,7 +13,11 @@ function App() {
   const letters = word.split("");
 
   function addGuessedLetter(letter) {
-    setGuessedLetters(prevLetters => [...prevLetters, letter])
+    setGuessedLetters(prevLetters => 
+      prevLetters.includes(letter) ?
+        prevLetters :
+        [...prevLetters, letter]
+    );
   }
 
   return (
