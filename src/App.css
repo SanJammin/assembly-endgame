@@ -10,11 +10,16 @@ body {
   padding: 20px;
   height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 header {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 header > h1 {
@@ -54,6 +59,7 @@ header > p {
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.2em;
+  margin: 0 auto;
 }
 
 .word-holder {
@@ -73,4 +79,26 @@ header > p {
   color: #F9F4DA;
   text-transform: uppercase;
   border-bottom: 1px solid #F9F4DA;
+}
+
+.alphabet-holder {
+  max-width: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.alphabet-holder > button {
+  border: 1px solid #D7D7D7;
+  background-color: #FCBA29;
+  color: #1E1E1E;
+  border-radius: 4px;
+  padding: 6px;
+  height: 40px;
+  width: 40px;
+  font-family: inherit;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 500;
 }
