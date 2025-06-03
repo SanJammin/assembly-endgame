@@ -47,3 +47,11 @@ header > p {
 .game-status > p {
   margin: 5px;
 }
+
+.chip-holder {
+  max-width: 350px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.2em;
+}
