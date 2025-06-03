@@ -1,8 +1,8 @@
-export default function Alphabet() {
+export default function Alphabet(props) {
     const alphabet = "abcdefghijklmnopqrstuvwxyz";
     const alphabetArray = alphabet.split("");
     const alphabetButtons = alphabetArray.map(letter => (
-        <button>{letter}</button>
+        <button onClick={() => props.onClick(letter)}>{letter}</button>
     ));
 
     return (

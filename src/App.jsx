@@ -8,8 +8,13 @@ import Alphabet from "./components/Alphabet";
 
 function App() {
   const [word, setWord] = useState("react");
+  const [guessedLetters, setGuessedLetters] = useState([]);
 
   const letters = word.split("");
+
+  function addGuessedLetter(letter) {
+    setGuessedLetters(prevLetters => [...prevLetters, letter])
+  }
 
   return (
     <>
@@ -17,7 +22,7 @@ function App() {
       <Status />
       <Chips />
       <Word word={letters} />
-      <Alphabet />
+      <Alphabet onClick={addGuessedLetter}/>
     </>
   );
 }
