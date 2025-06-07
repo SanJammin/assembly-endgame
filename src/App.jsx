@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { languages } from "./data/languages";
+import { getRandomWord } from "./data/utils";
 import "./App.css";
 import Header from "./components/Header";
 import Status from "./components/Status";
@@ -9,7 +10,7 @@ import Alphabet from "./components/Alphabet";
 
 function App() {
   // State Values
-  const [word, setWord] = useState("react");
+  const [word, setWord] = useState(() => getRandomWord());
   const [guessedLetters, setGuessedLetters] = useState([]);
 
   // Derived Values
@@ -29,6 +30,11 @@ function App() {
         prevLetters :
         [...prevLetters, letter]
     );
+  }
+
+  function handleClick() {
+    setWord(() => getRandomWord());
+    setGuessedLetters([]);
   }
 
   return (
@@ -68,7 +74,7 @@ function App() {
         word={letters}
         gameOver={isGameOver}
       />
-      {isGameOver && <button className="new-game">New Game</button>}
+      {isGameOver && <button className="new-game" onClick={handleClick}>New Game</button>}
     </>
   );
 }
