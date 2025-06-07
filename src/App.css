@@ -53,6 +53,15 @@ header > p {
   background-color: #BA2A2A;
 }
 
+.game-status.goodbye {
+  background-color: #7A5EA7;
+  border: 2px dashed #323232;
+}
+
+.game-status.goodbye > p {
+  padding-top: 1em;
+}
+
 .game-status > h2 {
   font-size: 1.25rem;
 }

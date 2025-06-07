@@ -35,6 +35,7 @@ function App() {
       <Status 
         gameWon={isGameWon}
         gameLost={isGameLost}
+        wrongGuessCount={wrongGuessCount}
       />
       <Chips 
         wrongGuessCount={wrongGuessCount}
