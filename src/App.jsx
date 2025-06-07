@@ -7,6 +7,7 @@ import Status from "./components/Status";
 import Chips from "./components/Chips";
 import Word from "./components/Word";
 import Alphabet from "./components/Alphabet";
+import ReactConfetti from "react-confetti";
 
 function App() {
   // State Values
@@ -39,6 +40,7 @@ function App() {
 
   return (
     <>
+      {isGameWon && <ReactConfetti />}
       <Header />
       <Status 
         gameWon={isGameWon}
