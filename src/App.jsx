@@ -7,9 +7,14 @@ import Word from "./components/Word";
 import Alphabet from "./components/Alphabet";
 
 function App() {
+  // State Values
   const [word, setWord] = useState("react");
   const [guessedLetters, setGuessedLetters] = useState([]);
 
+  // Derived Values
+  const wrongGuessCount = guessedLetters.filter(letter => !word.includes(letter)).length;
+
+  // Static Values
   const letters = word.split("");
 
   function addGuessedLetter(letter) {
