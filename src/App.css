@@ -159,6 +159,10 @@ span.chip.lost::before {
   pointer-events: none;
 }
 
+.word-holder > span.missing-letter {
+  color: #EC5D49;
+}
+
 button.new-game {
   background-color: #11B5E5;
   border: 1px solid #D7D7D7;

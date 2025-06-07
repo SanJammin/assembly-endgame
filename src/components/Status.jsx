@@ -23,7 +23,7 @@ export default function Status(props) {
     } else if (props.gameLost) {
         status = <>
             <h2>Game over!</h2>
-            <p>You lose! Better start learning Assembly </p>
+            <p>You lose! Better start learning Assembly 😭</p>
         </>
     } else {
         status = <p>{farewellText}</p>

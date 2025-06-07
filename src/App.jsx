@@ -50,7 +50,8 @@ function App() {
       />
       <Word 
         word={letters}
-        guessedLetters={guessedLetters} 
+        guessedLetters={guessedLetters}
+        gameLost={isGameLost}
       />
       {/* Combined visually-hidden aria-live region for status updates */}
       <section 
