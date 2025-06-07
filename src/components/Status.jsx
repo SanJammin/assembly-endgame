@@ -9,6 +9,8 @@ export default function Status(props) {
     useEffect(() => {
         if (props.wrongGuessCount > 0 && props.wrongGuessCount <= languages.length) {
             setFarewellText( getFarewellText(languages[props.wrongGuessCount - 1].name));
+    } else if (props.wrongGuessCount === 0) {
+        setFarewellText("");
     }
     }, [props.wrongGuessCount]);
 
