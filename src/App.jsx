@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { languages } from "./data/languages";
 import "./App.css";
 import Header from "./components/Header";
 import Status from "./components/Status";
@@ -13,6 +14,9 @@ function App() {
 
   // Derived Values
   const wrongGuessCount = guessedLetters.filter(letter => !word.includes(letter)).length;
+  const isGameWon = word.split("").every(letter => guessedLetters.includes(letter));
+  const isGameLost = wrongGuessCount >= languages.length - 1;
+  const isGameOver = isGameWon || isGameLost;
 
   // Static Values
   const letters = word.split("");
@@ -41,6 +45,7 @@ function App() {
         guessedLetters={guessedLetters}
         word={letters}
       />
+      {isGameOver && <button className="new-game">New Game</button>}
     </>
   );
 }
