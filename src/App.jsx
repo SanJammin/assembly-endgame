@@ -26,7 +26,11 @@ function App() {
       <Status />
       <Chips />
       <Word word={letters} />
-      <Alphabet onClick={addGuessedLetter}/>
+      <Alphabet 
+        onClick={addGuessedLetter}
+        guessedLetters={guessedLetters}
+        word={letters}
+      />
     </>
   );
 }

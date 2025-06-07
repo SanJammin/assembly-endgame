@@ -102,3 +102,15 @@ header > p {
   font-size: 1rem;
   font-weight: 500;
 }
+
+.key.correct {
+  background-color: #10A95B;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.key.wrong {
+  background-color: #EC5D49;
+  cursor: not-allowed;
+  pointer-events: none;
+}
