@@ -28,11 +28,15 @@ export default function Status(props) {
     }
 
     return (
-        <section className={clsx("game-status", {
-            won: props.gameWon,
-            lost: props.gameLost,
-            goodbye: props.wrongGuessCount > 0 && props.wrongGuessCount <= languages.length
-        })}>
+        <section 
+            className={clsx("game-status", {
+                won: props.gameWon,
+                lost: props.gameLost,
+                goodbye: props.wrongGuessCount > 0 && props.wrongGuessCount <= languages.length
+            })}
+            aria-live="polite"
+            role="status"
+        >
             {status}
         </section>
     );

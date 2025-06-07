@@ -13,10 +13,12 @@ function App() {
   const [guessedLetters, setGuessedLetters] = useState([]);
 
   // Derived Values
+  const numGuessesLeft = languages.length - 1;
   const wrongGuessCount = guessedLetters.filter(letter => !word.includes(letter)).length;
   const isGameWon = word.split("").every(letter => guessedLetters.includes(letter));
-  const isGameLost = wrongGuessCount >= languages.length - 1;
+  const isGameLost = wrongGuessCount >= numGuessesLeft;
   const isGameOver = isGameWon || isGameLost;
+  const lastGuessedLetter = guessedLetters[guessedLetters.length - 1];
 
   // Static Values
   const letters = word.split("");
@@ -44,6 +46,22 @@ function App() {
         word={letters}
         guessedLetters={guessedLetters} 
       />
+      {/* Combined visually-hidden aria-live region for status updates */}
+      <section 
+        className="sr-only"
+        aria-live="polite"
+        role="status"
+      >
+        <p>
+          {word.includes(lastGuessedLetter) ? 
+            `Correct! The letter ${lastGuessedLetter} is in the word.` :
+            `Sorry the letter ${lastGuessedLetter} is not in the word.`}
+            You have {numGuessesLeft} guess{numGuessesLeft === 1 ? "" : "es"} left.
+        </p>
+        <p>
+          Current word: {word.split("").map(letter => guessedLetters.includes(letter) ? letter + "." : "blank.").join(" ")}
+        </p>
+      </section>
       <Alphabet 
         onClick={addGuessedLetter}
         guessedLetters={guessedLetters}
