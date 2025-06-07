@@ -14,6 +14,7 @@ export default function Alphabet(props) {
             key={letter} 
             onClick={() => props.onClick(letter)}
             className={clsx("key", {correct: isCorrect, wrong: isWrong})}
+            disabled={props.gameOver}
         >
             {letter}
         </button>

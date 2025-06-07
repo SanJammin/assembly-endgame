@@ -48,6 +48,7 @@ function App() {
         onClick={addGuessedLetter}
         guessedLetters={guessedLetters}
         word={letters}
+        gameOver={isGameOver}
       />
       {isGameOver && <button className="new-game">New Game</button>}
     </>
