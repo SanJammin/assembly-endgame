@@ -32,7 +32,10 @@ function App() {
   return (
     <>
       <Header />
-      <Status />
+      <Status 
+        gameWon={isGameWon}
+        gameLost={isGameLost}
+      />
       <Chips 
         wrongGuessCount={wrongGuessCount}
       />
