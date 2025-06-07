@@ -29,7 +29,9 @@ function App() {
     <>
       <Header />
       <Status />
-      <Chips />
+      <Chips 
+        wrongGuessCount={wrongGuessCount}
+      />
       <Word 
         word={letters}
         guessedLetters={guessedLetters} 

@@ -1,21 +1,24 @@
 import { languages } from "../data/languages";
+import clsx from "clsx";
 
-export default function Chips() {
+export default function Chips(props) {
     
     return (
         <div className="chip-holder">
-            {languages.map(chip => (
-                <span style={{
-                    backgroundColor: chip.backgroundColor,
-                    color: chip.color,
-                    borderRadius: "2px",
-                    padding: "5px"
-                }}
-                    key={chip.name}
-                >
-                    {chip.name}
-                </span>
-            ))}
+            {languages.map((chip, index) => {
+
+                return (
+                    <span style={{
+                        backgroundColor: chip.backgroundColor,
+                        color: chip.color
+                    }}
+                        key={chip.name}
+                        className={clsx("chip", {lost: index < props.wrongGuessCount})}
+                    >
+                        {chip.name}
+                    </span>
+                )
+            })}
         </div>
     );
 }
